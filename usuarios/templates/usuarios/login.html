@@ -1,0 +1,34 @@
+<!-- Carregando o Estilo CSS BootStrap definido na página base.html -->
+{% extends 'investimentos/base.html' %}
+
+<!-- Carregando o Estilo da biblioteca Crispy Forms-->
+{% load crispy_forms_tags %}
+
+<!-- Carregando o Bloco Conteúdo definido na página base.html -->
+{% block conteudo %}
+
+<!-- Centralizando a Tabela usando uma div com a class="container" -->
+<div class="container" style="padding:30px">
+
+    <h1>Login</h1>
+    <!-- CRUD Delete -->
+    <form method="POST">
+        <!-- Segurança do Django: obrigatória para o envio de informações -->
+        {% csrf_token %}
+        <!-- Usando o Formulário do Django que já vem pronto  -->
+        <!-- usando .as_p para que cada linha do formulário seja considerada como um parágrafo -->
+        <!-- Segue o Link para a documentação do UserCreationForm para renderizar o formulario: -->
+        <!-- https://docs.djangoproject.com/en/3.2/ref/forms/fields/ -->
+        <!-- {{ form.as_p }} alteramos para utilizar o Estilo da biblioteca Crispy -->
+        {{ form | crispy }}
+        <!-- Botão para permitir Fazer Login  -->
+        <!-- Usando class para estilizar o botão e type para enviar a informação -->
+        <button class="btn btn-primary" type="submit">Fazer Login</button>
+        <!-- Link p/ redirecionar o usuário para a página de Criar Usuário caso ele não tenha uma Conta Cadastrada -->
+        <a href="{% url 'novo_usuario' %}">Não possui uma conta? Criar Conta</a>
+
+    </form>
+</div>
+
+<!-- Finalizando o Bloco -->
+{% endblock %}

@@ -1,0 +1,21 @@
+<!-- Carregando o Estilo CSS BootStrap e o Block Conteúdo definidos na página base.html -->
+{% extends 'investimentos/base.html' %}
+{% block conteudo %}
+
+<!-- Centralizando a Tabela usando uma div com a class="container" -->
+<div class="container">
+    <!-- CRUD Delete -->
+    <form action="" method="post">
+        {% csrf_token %}
+        <!-- Centralizando o Cabeçalho usando style -->
+        <h1 style="text-align: center;" >Confirmar a exclusão do {{item.investimento}}</h1>
+        <!-- Criando o botão para Cancelar a Exclusão -->
+        <!-- Usando class para estilizar os botões -->
+        <button class="btn btn-default" ><a href="{% url 'investimentos' %}">Cancelar</a></button>
+        <!-- Criando o botão para Confirmar a Exclusão -->
+        <button class="btn btn-danger" type="submit">Confirmar</button>
+    </form>
+</div>
+
+<!-- Finalizando o Bloco -->
+{% endblock %}

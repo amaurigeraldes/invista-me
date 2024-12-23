@@ -1,0 +1,7 @@
+Passo a serem executados após a criação de uma Nova Aplicação Django:
+
+1º - Criar uma Nova Rota (arquivo urls.py)
+
+2º - Criar uma Função responsável por entregar essa Rota (arquivo views.py da Nova Aplicação Django) 
+
+3º - Criar um Template responsável para exibir os dados que serão exibidos no site

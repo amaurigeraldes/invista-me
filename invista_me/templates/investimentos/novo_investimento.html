@@ -1,0 +1,37 @@
+<!-- Instalando a biblioteca crispy para estilizar esta página -->
+<!-- pip install crispy-bootstrap5 -->
+
+<!-- Configurando o Crispy Forms utilizando os itens abaixo em settings.py -->
+<!-- 'crispy_forms', -->
+<!-- 'crispy_bootstrap5', -->
+<!-- CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5' -->
+<!-- CRISPY_TEMPLATE_PACK = 'bootstrap5' -->
+
+<!-- Carregando o Estilo CSS BootStrap e o Block Conteúdo definidos na página base.html -->
+{% extends 'investimentos/base.html' %}
+{% block conteudo %}
+
+<!-- Carregando o Estilo da biblioteca Crispy Forms-->
+{% load crispy_forms_tags %}
+
+<!-- Centralizando a Tabela usando uma div com a class="container" -->
+<div class="container">
+    
+    <h1>Formulário Novo Investimento</h1>
+    <!-- Enviando informações do Navegador para o BackEnd de volta para a views.py-->
+    <!-- Enviando informações dinâmicas -->
+    <!-- Situação 1: Registrar um Novo Investimento -->
+    <!-- Situação 2: Alterar um Investimento Existente -->
+    <form action="" method="POST">
+        <!-- Para segurança, passando um token de autenticação -->
+        {% csrf_token %}
+        <!-- Passando o Dicionário criado no arquivo views.py -->
+         <!-- Usando | crispy para estilizar a página -->
+        {{formulario | crispy}}
+        <!-- Usando class para estilizar o botão -->
+        <button type="submit" class="btn btn-success" >Salvar</button>
+    </form>
+</div>
+
+<!-- Finalizando o Bloco -->
+{% endblock %}

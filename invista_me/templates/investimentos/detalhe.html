@@ -1,0 +1,31 @@
+<!-- Carregando o Estilo CSS BootStrap e o Block Conteúdo definidos na página base.html -->
+{% extends 'investimentos/base.html' %}
+{% block conteudo %}
+
+<!-- Centralizando o Cabeçalho usando style -->
+<h1 style="text-align: center;" >Detalhe do Investimento</h1>
+
+<!-- Centralizando a Tabela usando uma div com a class="container" -->
+<div class="container">
+    <!-- Usando a class para estilizar a tabela -->
+    <table class="table table-hover table-bordered">
+        <!-- Cabeçalho -->
+        <tr>
+            <th>Id</th>
+            <th>Investimento</th>
+            <th>Valor</th>
+            <th>Data</th>
+            <th>Pago</th>
+        </tr>
+        <tr>
+            <td>{{dados.id}}</td>
+            <td>{{dados.investimento}}</td>
+            <td>{{dados.valor}}</td>
+            <td>{{dados.data}}</td>
+            <td>{{dados.pago}}</td>
+        </tr>
+    </table>
+</div>
+
+<!-- Finalizando o Bloco -->
+{% endblock %}
