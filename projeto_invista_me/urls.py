@@ -71,7 +71,7 @@ urlpatterns = [
     # Criando uma rota para a página novo_investimento para criar um investimento
     # path('novo_investimento/', views.novo_investimento, name='novo_investimento'),
     # Alterando a rota para apontar para a função criar (CRUD Create) no arquivo views.py
-    path('novo_investimento/', views.criar, name='novo'),
+    path('novo_investimento/', views.criar, name='novo_investimento'),
     
     # Criando uma rota para a página novo_investimento para editar um investimento
     # Obs.1: apontando para a função editar (CRUD Update) no arquivo views.py

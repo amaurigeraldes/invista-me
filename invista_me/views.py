@@ -74,7 +74,7 @@ def detalhe(request, id_investimento):
         'dados': Investimento.objects.get(pk=id_investimento)
     }
     # Usando a função render e passando o caminho para a pasta templates
-    return render(request, 'investimentos/detalhe.html', context=dados)
+    return render(request, 'investimentos/detalhe.html', dados)
 
 # Criando a página criar (CRUD Create)
 @login_required
@@ -119,7 +119,7 @@ def editar(request, id_investimento):
         return render(request, 'investimentos/novo_investimento.html', {'formulario': formulario})
     # Quando já estamos em uma página e pressionamos o Botão Submit enviando os dados da página, não estamos mais fazendo um GET (buscando dados) mas sim um POST (enviando dados), que estamos atualizando
     # Caso contrário, a requisição seja um POST
-    else:
+    if request.method == 'POST':
         # Acessando as informações que foram preenchidas na Tela e atribuindo à variável
         # Obs.: passando o parâmetro instance=investimento para a atualização das informações no BD 
         formulario = InvestimentoForm(request.POST, instance=investimento)
