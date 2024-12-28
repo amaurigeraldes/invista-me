@@ -23,7 +23,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-59t-2@9gpw)yjbb6sm$gfnyssz16n_^a4gl+&2q@q7a%!y)*b='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
@@ -41,8 +40,7 @@ INSTALLED_APPS = [
     'invista_me', # Importando a Nova Aplicação Django que criamos onde será construído o Projeto em sí
     'crispy_forms', # Ativando essa biblioteca no Django
     'crispy_bootstrap5', # Ativando essa biblioteca no Django
-    'usuarios', # Importando a Nova Aplicação Django que criamos para o cadastro de usuários
-    
+    'usuarios'  # Importando a Nova Aplicação Django que criamos para o cadastro de usuários
 ]
 
 MIDDLEWARE = [
