@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,7 +40,8 @@ INSTALLED_APPS = [
     'invista_me', # Importando a Nova Aplicação Django que criamos onde será construído o Projeto em sí
     'crispy_forms', # Ativando essa biblioteca no Django
     'crispy_bootstrap5', # Ativando essa biblioteca no Django
-    'usuarios'  # Importando a Nova Aplicação Django que criamos para o cadastro de usuários
+    'usuarios',  # Importando a Nova Aplicação Django que criamos para o cadastro de usuários
+    
 ]
 
 MIDDLEWARE = [
@@ -125,8 +125,6 @@ TIME_ZONE = 'America/Sao_Paulo' # Alterando de UTC para America/Sao_Paulo
 
 USE_I18N = True
 
-USE_L10N = True
-
 USE_TZ = True
 
 
@@ -148,4 +146,4 @@ LOGIN_URL = 'login'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
-# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
